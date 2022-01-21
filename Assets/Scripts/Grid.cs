@@ -407,14 +407,10 @@ public class Grid : MonoBehaviour
         time = 0;
        // int[,] puzzle = puzzle01;
         playing = true;
-      
-        for (int i = 0; i < column; i++)
-        {
-            for (int j = 0; j < row; j++)
-            {
-                SetSquare(squares[i, j], 0);
-            }
-        }
+
+        //numer mapy w pliku json zwiększany o jeden, przy każdym wywołaniu
+        int map = 0;
+        map++;
 
         pausePanel.SetActive(false);
         winPanel.SetActive(false);

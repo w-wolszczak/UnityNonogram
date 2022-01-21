@@ -12,6 +12,7 @@ public class GameMain : MonoBehaviour
 
     public int row = DEFAULT_ROW, column = DEFAULT_COLUMN;
 
+
     public Grid grid;
 
     public float rate = 0.5f;
@@ -50,6 +51,7 @@ public class GameMain : MonoBehaviour
         grid.LoadPuzzle(5,5,puzzle00);
         grid.playing = true;
     }
+
 
     public int[,] CreatePuzzle(int r, int c)
     {

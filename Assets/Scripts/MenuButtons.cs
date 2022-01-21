@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuButtons : MonoBehaviour
 {
+   
    public void LoadScene(string name)
     {
         SceneManager.LoadScene(name);
@@ -12,23 +13,24 @@ public class MenuButtons : MonoBehaviour
     }
 
     //public void LoadEasyGame(string name)
-   // {
+    // {
     //    GameSettings.Instance.SetGameMode(GameSettings.EGameMode.EASY);
-     //   SceneManager.LoadScene(name);
+    //   SceneManager.LoadScene(name);
 
-  //  }
+    //  }
     //public void LoadMediumGamee(string name)
     //{
-      //  GameSettings.Instance.SetGameMode(GameSettings.EGameMode.MEDIUM);
-       //SceneManager.LoadScene(name);
+    //  GameSettings.Instance.SetGameMode(GameSettings.EGameMode.MEDIUM);
+    //SceneManager.LoadScene(name);
 
-//    }
-  //  public void LoadHardGame(string name)
+    //    }
+    //  public void LoadHardGame(string name)
     //{
-      //  GameSettings.Instance.SetGameMode(GameSettings.EGameMode.HARD);
-        //SceneManager.LoadScene(name);
+    //  GameSettings.Instance.SetGameMode(GameSettings.EGameMode.HARD);
+    //SceneManager.LoadScene(name);
 
     //}
+  
 
     public void ActivateObject(GameObject obj)
     {
