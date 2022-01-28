@@ -18,6 +18,7 @@ public class MuteAudio : MonoBehaviour
         ObjectMusic = GameObject.FindWithTag("GameMusic");
         AudioSource = ObjectMusic.GetComponent<AudioSource>();
         soundOnImage = button.image.sprite;
+       
     }
     void Update()
     {

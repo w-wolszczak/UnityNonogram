@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MenuButtons : MonoBehaviour
 {
-   
-   public void LoadScene(string name)
+    public bool playing = false;
+    //  public GameObject pausePanel, winPanel;
+    public void LoadScene(string name)
     {
         SceneManager.LoadScene(name);
 
@@ -30,7 +31,6 @@ public class MenuButtons : MonoBehaviour
     //SceneManager.LoadScene(name);
 
     //}
-  
 
     public void ActivateObject(GameObject obj)
     {
@@ -40,4 +40,12 @@ public class MenuButtons : MonoBehaviour
     {
         obj.SetActive(false);
     }
+   /* public void Pause()
+    {
+        // time = this.time;
+        //playing = false;
+        //gamePaused = true;
+        pausePanel.SetActive(true);
+        winPanel.SetActive(false);
+    }*/
 }

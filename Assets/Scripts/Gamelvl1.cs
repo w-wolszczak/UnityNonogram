@@ -19,17 +19,13 @@ public class Gamelvl1 : MonoBehaviour
     public float rate = 0.5f;
 
     public static int[,] puzzle00 = {
-        { 1, 1, 0, 1, 1 },
-        { 1, 1, 0, 1, 1 },
-        { 0, 0, 0, 0, 0 },
-        { 0, 1, 1, 1, 0 },
-        { 1, 0, 0, 0, 1 },};
+        { 1, 1, 0, 0, 0, 1 },
+        { 0, 1, 0, 1, 1, 1 },
+        { 0, 1, 0, 1, 1, 0 },
+        { 0, 1, 1, 1, 0, 0 },
+        { 0, 1, 1, 1, 1, 0 },
+        { 0, 0, 0, 1, 0, 0 },};
 
-    //public static int[,] puzzle01 = 
-
-    //public int[,] solution;
-
-    //public int[,] 
 
     void Start()
     {
@@ -44,14 +40,14 @@ public class Gamelvl1 : MonoBehaviour
         int[,] puzzle = CreatePuzzle(row, column);
 
         //grid.LoadPuzzle(row,column,puzzle);
-        grid.LoadPuzzle(5, 5, puzzle00);
+        grid.LoadPuzzle(6, 6, puzzle00);
         grid.playing = true;
     }
 
    
     public int[,] CreatePuzzle(int r, int c)
     {
-        //float rate = 0.5f;
+    
 
         int[,] p = new int[c, r];
 

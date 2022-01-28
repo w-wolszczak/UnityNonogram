@@ -19,12 +19,27 @@ public class Gamelvl3 : MonoBehaviour
     public float rate = 0.5f;
 
     public static int[,] puzzle00 = {
-        { 1, 1, 0, 1, 1 },
-        { 1, 1, 0, 1, 1 },
-        { 0, 0, 0, 0, 0 },
-        { 0, 1, 1, 1, 0 },
-        { 1, 0, 0, 0, 1 },};
+        { 0, 1, 1, 1, 0, 0, 0, 0 },
+        { 1, 1, 0, 1, 0, 0, 0, 0 },
+        { 0, 1, 1, 1, 0, 0, 0, 1 },
+        { 0, 0, 1, 1, 1, 1, 1, 1 },
+        { 1, 0, 1, 1, 1, 1, 1, 1 },
+        { 1, 1, 1, 1, 1, 1, 1, 0 },
+        { 0, 0, 0, 0, 1, 0, 0, 0 },
+        { 0, 0, 0, 1, 1, 0, 0, 0 },};
 
+    /*  public static int[,] puzzle00 = {
+          { 0, 0, 1, 1, 0, 0, 1, 1, 0, 0 },
+          { 0, 0, 1, 1, 0, 0, 1, 1, 0, 0 },
+          { 0, 0, 1, 1, 0, 0, 1, 1, 0, 0 },
+          { 0, 0, 1, 1, 0, 0, 1, 1, 0, 0 },
+          { 0, 1, 1, 1, 1, 1, 1, 1, 1, 0 },
+          { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+          { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+          { 1, 1, 0, 1, 1, 1, 1, 0, 1, 1 },
+          { 0, 1, 1, 1, 0, 0, 1, 1, 1, 0 },
+          { 0, 0, 1, 1, 1, 1, 1, 1, 0, 0 },};
+    */
     //public static int[,] puzzle01 = 
 
     //public int[,] solution;
@@ -44,7 +59,7 @@ public class Gamelvl3 : MonoBehaviour
         int[,] puzzle = CreatePuzzle(row, column);
 
         //grid.LoadPuzzle(row,column,puzzle);
-        grid.LoadPuzzle(5, 5, puzzle00);
+        grid.LoadPuzzle(8, 8, puzzle00);
         grid.playing = true;
     }
 

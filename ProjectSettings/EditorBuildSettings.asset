@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/StartPage.unity
-    guid: c2c5f09087325b348bbe18d7fee2a699
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 07f322abe12eca249a1f4ae6b3a66e00
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: ab8853b4f4d290e49af3239ceb22b845
@@ -35,4 +38,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gamelvl4.unity
     guid: 597063c290dfcbb43a14d40a0ea14e79
+  - enabled: 1
+    path: Assets/Scenes/Gamelvl5.unity
+    guid: f56a0fa29c17b6642b084e010bbbd7a9
+  - enabled: 1
+    path: Assets/Scenes/Gamelvl6.unity
+    guid: bd59428b498aee94987cbd290250d70f
+  - enabled: 1
+    path: Assets/Scenes/Gamelvl7.unity
+    guid: 74db86d35f161964ba03710490473378
+  - enabled: 1
+    path: Assets/Scenes/Gamelvl8.unity
+    guid: f386e3668881ef84e8156e648bbe6ce7
+  - enabled: 1
+    path: Assets/Scenes/Gamelvl9.unity
+    guid: 212f642a021052a49b406ceb2f557e59
   m_configObjects: {}

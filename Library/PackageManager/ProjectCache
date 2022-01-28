@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637783176315752960
+      ticks: 637786561619112491
     m_Hash: 1919673144
   m_LockFileStatus:
     m_FilePath: D:/Users/UnityProjects/Unitynonogramproject/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637783176315952838
+      ticks: 637786561619224182
     m_Hash: 3247269521
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -599,10 +599,12 @@ m_PackageAssets:
         - 1.1.29
         - 1.1.30
         - 2.0.1-pre.12
+        - 2.0.1-pre.18
         compatible:
         - 1.1.29
         - 1.1.30
         - 2.0.1-pre.12
+        - 2.0.1-pre.18
         verified: 1.1.30
       dependencies:
       - name: com.unity.ext.nunit

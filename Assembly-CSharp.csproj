@@ -66,6 +66,7 @@
      <Compile Include="Assets\Lean\GUI\Scripts\LeanSelection.cs" />
      <Compile Include="Assets\Lean\Transition\Scripts\LeanTiming.cs" />
      <Compile Include="Assets\Lean\GUI\Scripts\LeanWindowCloser.cs" />
+     <Compile Include="Assets\Scripts\MenuControl.cs" />
      <Compile Include="Assets\Lean\Transition\Scripts\LeanState.cs" />
      <Compile Include="Assets\Lean\GUI\Scripts\LeanResize.cs" />
      <Compile Include="Assets\Lean\GUI\Scripts\LeanPulse.cs" />
@@ -77,6 +78,7 @@
      <Compile Include="Assets\Lean\Transition\Scripts\LeanEase.cs" />
      <Compile Include="Assets\Lean\Transition\Scripts\LeanTransition.cs" />
      <Compile Include="Assets\Lean\Transition\Methods\LeanJoinInsert.cs" />
+     <Compile Include="Assets\Scripts\Gamelvl6.cs" />
      <Compile Include="Assets\Lean\Transition\Methods\UI\LeanTransformLocalScaleXY.cs" />
      <Compile Include="Assets\Lean\Transition\Methods\Transform\LeanTransformLocalPositionX.cs" />
      <Compile Include="Assets\Scripts\Gamelvl4.cs" />
@@ -93,7 +95,6 @@
      <Compile Include="Assets\Lean\GUI\Scripts\LeanSelectionManager.cs" />
      <Compile Include="Assets\Lean\Transition\Methods\Transform\LeanTransformPositionX.cs" />
      <Compile Include="Assets\Lean\GUI\Scripts\LeanHover.cs" />
-     <Compile Include="Assets\Scripts\PinchDetection.cs" />
      <Compile Include="Assets\Lean\GUI\Scripts\LeanButton.cs" />
      <Compile Include="Assets\Lean\Transition\Methods\Transform\LeanTransformLocalScale.cs" />
      <Compile Include="Assets\Lean\GUI\Scripts\LeanSwitch.cs" />
@@ -101,7 +102,6 @@
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Grid.cs" />
      <Compile Include="Assets\Lean\Transition\Methods\UI\LeanRectTransformPivotY.cs" />
-     <Compile Include="Assets\Scripts\TouchControls.cs" />
      <Compile Include="Assets\Lean\Transition\Examples\Scripts\LeanAnimationOnce.cs" />
      <Compile Include="Assets\Scripts\MenuButtons.cs" />
      <Compile Include="Assets\Lean\GUI\Scripts\LeanSelectionPriority.cs" />
@@ -112,6 +112,7 @@
      <Compile Include="Assets\Lean\Transition\Methods\UI\LeanCanvasGroupBlocksRaycasts.cs" />
      <Compile Include="Assets\Lean\Transition\Methods\Transform\LeanTransformPosition.cs" />
      <Compile Include="Assets\Lean\Transition\Methods\LeanEvent.cs" />
+     <Compile Include="Assets\Scripts\SampleScene.cs" />
      <Compile Include="Assets\Lean\Transition\Methods\Material\LeanMaterialFloat.cs" />
      <Compile Include="Assets\Lean\GUI\Scripts\LeanSelectionHighlight.cs" />
      <Compile Include="Assets\Lean\GUI\Scripts\LeanShake.cs" />
@@ -125,8 +126,10 @@
      <Compile Include="Assets\Lean\GUI\Scripts\LeanWindow.cs" />
      <Compile Include="Assets\Lean\GUI\Scripts\LeanJoystick.cs" />
      <Compile Include="Assets\Scripts\ChangeLang.cs" />
+     <Compile Include="Assets\Scripts\SaveControl.cs" />
      <Compile Include="Assets\Lean\Transition\Methods\UI\LeanRectTransformOffsetMax.cs" />
      <Compile Include="Assets\Lean\Transition\Methods\Material\LeanMaterialVector.cs" />
+     <Compile Include="Assets\Scripts\Gamelvl7.cs" />
      <Compile Include="Assets\Lean\Transition\Examples\Scripts\LeanAnimation.cs" />
      <Compile Include="Assets\Lean\Transition\Methods\UI\LeanCanvasGroupAlpha.cs" />
      <Compile Include="Assets\Lean\Common\Examples\Scripts\LeanCircuit.cs" />

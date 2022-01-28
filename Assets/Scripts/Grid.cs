@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 /// <summary>
 /// Game UI Control
 /// </summary>
@@ -14,9 +15,12 @@ public class Grid : MonoBehaviour
     public int[,] currentGrid;
     public int[,] puzzle;
     public static GridSquare currentSquare = null;
-
+   
     private int mouseType = -1;
+    //private int touchType = -1;
+
     private int mouseFlag = 0;
+    //private int touchFlag = 0;
 
     public bool playing = false;
 
@@ -34,11 +38,16 @@ public class Grid : MonoBehaviour
     [HideInInspector]
     public int fontSize = 100;
 
-    public GameObject pausePanel, winPanel;
+    public GameObject pausePanel;
+    public GameObject winPanel;
+    public GameObject winButton;
+    //public GameObject pictureObj;
+  // public GameObject grid;
     public Text timeText;
 
     private float time = 0;
 
+    private bool gamePaused = false;
    
 
     public void LoadPuzzle(int r, int c, int[,] puzzle)
@@ -51,9 +60,14 @@ public class Grid : MonoBehaviour
 
         //gridTransform .GetComponent<RectTransform >().sizeDelta = 
 
-        squareSize = (int)(1000 / r / 1.5f);
+        squareSize = (int)(1000 / r / 1.3f);
         fontSize = squareSize / 4;
         if (fontSize < 25) fontSize = 25;
+        if (squareSize>130)
+            squareSize = (int)(1000 / r / 1.5f);
+            else if(squareSize<66)
+            squareSize = (int)(1000 / r / 1.2f);
+       
 
         currentGrid = new int[column, row];
 
@@ -116,7 +130,7 @@ public class Grid : MonoBehaviour
                 obj.GetComponent<RectTransform>().sizeDelta = new Vector2(squareSize, squareSize);
 
                 //Text position
-                Vector2 pos = new Vector2((-(result.Count -a) * squareSize +squareSize)/2 - squareSize/4, (row-i)*squareSize-squareSize/2);
+                Vector2 pos = new Vector2((-(result.Count -a) * squareSize + squareSize) / 3.3f - squareSize / 4, (row-i)*squareSize-squareSize/2);
                 obj.GetComponent<RectTransform>().anchoredPosition = pos;
 
                 //Font
@@ -127,23 +141,43 @@ public class Grid : MonoBehaviour
                 rowText.Add(t);
             }
         }
-
-        gridTransform.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-squareSize * row / 2, -500);
+        if(row<10)
+            gridTransform.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-squareSize * row / 2.2f, -500);
+        else if(row==10)
+         gridTransform.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-squareSize * row / 2.2f, -500);
+       // gridTransform.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-315, -500);
+        else if (row>10)
+            gridTransform.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2((-squareSize * row / 2.2f), -600);
+     
 
     }
-
+    /*void Start()
+    {
+        BlackOut = button.image.sprite;
+        BlackOPut.SetActive(false);
+        PLMenu.SetActive(true);
+    }*/
     void Update()
     {
         if (playing)
         {
-            time += Time.deltaTime;
+            if (pausePanel.activeSelf)
+                gamePaused = true;
+            else
+                gamePaused = false;
+
+            if(gamePaused==false){
+                time += Time.deltaTime;
+            }
             int hour = (int)time / 3600;
             int minute = (int)(time - hour * 3600) / 60;
             int second = (int)(time - hour * 3600 - minute * 60);
             timeText.text = string.Format("{0:D2}:{1:D2}", minute, second);
 
+           // Touch touch = Input.GetTouch(0);
             Vector2 pos;
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(gridTransform as RectTransform,Input.mousePosition, null, out pos);
+           RectTransformUtility.ScreenPointToLocalPointInRectangle(gridTransform as RectTransform,Input.mousePosition, null, out pos);
+           // RectTransformUtility.ScreenPointToLocalPointInRectangle(gridTransform as RectTransform, touch.position, null, out pos);
             //Debug.Log(pos);
 
             float limit = squareSize * row;
@@ -157,31 +191,39 @@ public class Grid : MonoBehaviour
             }
 
 
-            if (Input.GetMouseButtonUp(0)|| Input.GetMouseButtonUp(1)|| Input.GetMouseButtonUp(2))
+            if (Input.GetMouseButtonUp(0))// || Input.touchCount == 1)//|| Input.GetMouseButtonUp(2))
             {
                 mouseType = -1;
+                // touchType = -1;
                 mouseFlag = 0;
+                // touchFlag = 0;
             }
 
-            
-            if (Input.GetMouseButtonDown(0))
+
+            if (Input.GetMouseButtonDown(0))// || Input.touchCount == 1)
+            //if (Input.touchCount>0)
             {
+                //Touch touch = Input.GetTouch(0);
                 mouseType = 0;
+                // touchType = 0;
                 if (currentSquare == null)
                 {
                     mouseFlag = 0;
+                    //touchFlag = 0;
                 }
                 else if (currentSquare.state == 0 || currentSquare.state == 3)
                 {
                     mouseFlag = 1;
+                    // touchFlag = 1;
                     SetSquare(currentSquare, 1);
                 }
                 else
                 {
                     SetSquare(currentSquare, 0);
                     mouseFlag = -1;
+                    //touchFlag = -1;
                 }
-            }
+            }/*
             else if (Input.GetMouseButtonDown(1))
             {
                 Debug.Log("button down 1");
@@ -221,14 +263,16 @@ public class Grid : MonoBehaviour
                 }
             }
 
-
+            */
             if (currentSquare != null)
             {
 
                 //Left mouse button: ：Black out
-                if (Input.GetMouseButton(0))
+               if (Input.GetMouseButton(0))
+              //if(Input.touchCount>0)
                 {
                     if(mouseType == 0)
+                    //if(touchType==0)
                     {
                         if((currentSquare .state == 0 || currentSquare .state == 3 )&& mouseFlag == 1)
                         {
@@ -243,17 +287,19 @@ public class Grid : MonoBehaviour
                             if(currentSquare .state == 0 || currentSquare.state == 3)
                             {
                                 mouseFlag = 1;
+                                //touchFlag = 1;
                                 SetSquare(currentSquare, 1);
                             }else if(currentSquare.state == 1)
                             {
                                 mouseFlag = -1;
+                                //touchFlag = -1;
                                 SetSquare(currentSquare, 0);
                             }
                         }
                     }
                    
                 }
-                //right click：Cross
+               /* //right click：Cross
                 else if (Input.GetMouseButton(1))
                 {
                     if (mouseType == 1)
@@ -308,12 +354,31 @@ public class Grid : MonoBehaviour
                             }
                         }
                     }
-                }
+                }*/
 
             }
         }
     }
 
+    /*
+    public void ButtonClicked()
+    {
+        if (isOn)
+        {
+            button.image.sprite = BlackOut;
+            isOn = false;
+            ENGMenu.SetActive(true);
+            PLMenu.SetActive(false);
+        }
+        else
+        {
+            button.image.sprite = PLmenu;
+            isOn = true;
+            ENGMenu.SetActive(false);
+            PLMenu.SetActive(true);
+        }
+    }
+    */
     private void SetSquare(GridSquare square, int state)
     {
         //Debug.Log(square.name + " set as " + state);
@@ -324,7 +389,9 @@ public class Grid : MonoBehaviour
         {
            
             playing = false;
-            winPanel.SetActive(true);
+            winButton.SetActive(true);
+          // pictureObj.SetActive(true);
+          //  grid.SetActive(false);
         }
     }
    
@@ -372,12 +439,16 @@ public class Grid : MonoBehaviour
         pausePanel.SetActive(false);
     }
 
-    public void Pause()
-    {
-        playing = false;
-        pausePanel.SetActive(true);
-    }
 
+   /* public void Pause()
+    {
+        // time = this.time;
+        playing = false;
+        gamePaused = true;
+        pausePanel.SetActive(true);
+        winPanel.SetActive(false);
+    }
+   */
     public void Resume()
     {
         playing = true;
